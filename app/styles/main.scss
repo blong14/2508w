@@ -1,0 +1,29 @@
+// bower:scss
+@import "components-font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import 'variables';
+@import 'mixins';
+@import 'hero';
+@import 'navbar';
+@import 'about';
+@import 'application';
+@import 'photo_animation';
+@import 'photo_album';
+@import 'footer';
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background: rgb(235, 235, 235);
+}
+
+#main {
+  min-height: 70vh;
+}

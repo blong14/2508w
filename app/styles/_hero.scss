@@ -1,0 +1,20 @@
+.hero-image {
+  background: url('/images/2508w-progressive.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+
+  .wrapper {
+    position: absolute;
+    top: 40vh;
+    left: 25vw;
+
+    h1 {
+      margin: 0px;
+      color: #ffffff;
+    }
+  }
+
+}

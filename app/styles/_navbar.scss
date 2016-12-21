@@ -1,0 +1,38 @@
+// larger screen styles
+.top-bar {
+  background: #000000;
+  .title-area {
+    background: #000000;
+  }
+
+  li {
+    background: #000000 !important;
+  }
+
+  a {
+    background: #000000 !important;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+
+  .top-bar {
+    text-align: center;
+  }
+
+  ul.center-buttons {
+    display: inline-block;
+  }
+}
+
+// some mobile resets
+
+.top-bar {
+  .toggle-topbar {
+    position: relative;
+  }
+}
+
+.menu-icon {
+  padding-top: 1.2rem;
+}
