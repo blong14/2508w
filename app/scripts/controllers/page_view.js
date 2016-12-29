@@ -10,7 +10,7 @@ angular.module('2508wApp')
       });
 
       this.sendPageView = function(url) {
-        if($window.location.origin === 'http://www.2508w.club') {
+        if($window.location.origin === 'https://www.2508w.club') {
           console.log($window.location.origin);
           $window.ga('send', 'pageview', { page: $location.url() });
         }
