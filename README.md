@@ -9,10 +9,7 @@ Run `grunt` for building and `grunt serve` for preview.
 Running `grunt test` will run the unit tests with karma.
 
 ## Deploying
-`appcfg.sh --oauth2 update war`
-
-## Dev Server
-`ant runserver`
+`firebase deploy`
 
 ## TODO:
 
