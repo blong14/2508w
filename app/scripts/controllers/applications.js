@@ -13,7 +13,6 @@ angular.module('2508wApp')
           title: 'ReverbNation Curation',
           header: "The Big Data Challenge",
           description:"My first major project at ReverbNation. What a pleasure it was develop a piece of technology that is integral in many of the things that makes ReverbNation great. Built with Rails, Sass, ElasticSearch, Resque, and Angular 1.x",
-          twitter_description:"ReverbNation Curation",
           linkText: 'Go to article...'
         },
         {
@@ -22,7 +21,6 @@ angular.module('2508wApp')
           title: 'Fan Voting',
           header: "Battle of the Bands",
           description:"Help select the opening act for an exclusive concert featuring country music star, Tyler Farr! Built with Docker, Rails, and Angular2.",
-          twitter_description:"ReverbNation!",
           linkText: "Check it out..."
         },
         {
@@ -31,7 +29,6 @@ angular.module('2508wApp')
           title: 'Product Marketing',
           header: "ReverbNation Marketing Pages",
           description:"Product marketing refresh. Provides a landing place for blog content, social media sharing, and general awesomeness. Built with Rails and Foundation.",
-          twitter_description:"ReverbNation!",
           linkText: "Check it out..."
         },
         {
@@ -40,7 +37,6 @@ angular.module('2508wApp')
           title: 'Artist Profile',
           header: "New Artist Profile",
           description:"Front-end update for one of ReverbNation's most viewed pages. Built Angular 1.x, Rails, and Foundation.",
-          twitter_description:"ReverbNation!",
           linkText: "Try it..."
         },
         {
@@ -49,7 +45,6 @@ angular.module('2508wApp')
           title: 'HBCO',
           header: "Heritage Building Co., LLC - Veteran Owned",
           description:"Starter website for Heritage Building Co. Tried for a clean and simple way to present HBCO's content. This by no means is the final product but simply a place to start telling HBCO's story. Built with Java, Foundation, and Angular 1.x.",
-          twitter_description:"General contracting services!",
           linkText: "Try it..."
         },
         {
@@ -58,7 +53,6 @@ angular.module('2508wApp')
           title: 'Blender',
           header: "Beer Blender",
           description:"Pro Brewer Tim Copple needed a quick and easy web app to achieve those perfect blends. Built with Rails, Foundation, and Angular 1.x.",
-          twitter_description:"Beer!",
           linkText: "Try it..."
         },
         {
@@ -67,7 +61,6 @@ angular.module('2508wApp')
           title: 'Shopkeen',
           header: "The ultimate Shopkin database",
           description:"Shopkeen is an attempt at creating a Shopkin database for Sadie and her friend Carson. Built with Rails, PostgreSQL, and Foundation.",
-          twitter_description:"Shopkeen, what a cool place to collect shopkins.",
           linkText: "Try it..."
         },
         {
@@ -76,7 +69,6 @@ angular.module('2508wApp')
           title: 'KayeWalker',
           header: "An easy way to find the proper walker for your needs.",
           description:"Web and mobile applications to help determine the best walker offered by Kaye Products. Built with Cordova, Java, jQuery, and Bootstrap",
-          twitter_description:"Never fear, KayeWalker is here!",
           linkText: "Try it..."
         }
       ];

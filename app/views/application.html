@@ -1,5 +1,5 @@
 <div class="applications" ng-controller="AppsCtrl as ctrl">
-  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-equalizer>
+  <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-equalizer data-equalizer-mq="medium-up">
     <li ng-repeat="app in ctrl.apps track by $index" data-foundation-reflow="equalizer">
       <div class="row" >
         <div class="small-12 columns">
@@ -9,17 +9,8 @@
               <img class="post-icon" src="images/logo.jpg" alt="icon">
               <p class="post-author"><a href="{{app.url}}" target="_blank">{{app.title}}</a></p>
               <h4>{{app.header}}</h4>
-              <p>{{app.description}}</p>
-              <p>
-                <a href="{{app.url}}" target="_blank">{{app.linkText}}</a>
-                <a href="#" data-dropdown="share{{$index}}" aria-controls="share{{$index}}" aria-expanded="false" class="dropdown right"><i class="fi-share"></i></button><br>
-                <ul id="share{{$index}}" data-dropdown-content class="f-dropdown" aria-hidden="true">
-                  <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="{{app.url}}" data-text="{{app.twitter_description}}.">Tweet</a></li>
-                  <li><div class="fb-share-button" data-href="{{app.url}}" data-layout="button_count"></div></li>
-                  <li><script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-                  <script type="IN/Share" data-url="{{app.url}}" data-counter="right"></script></li>
-                </ul>
-              </p>
+              <p style="margin-bottom: 50px;">{{app.description}}</p>
+              <p><a href="{{app.url}}" target="_blank" style="position: absolute; bottom: 0; margin-bottom: 10px;">{{app.linkText}}</a></p>
             </div>
           </article>
         </div>
@@ -27,6 +18,7 @@
     </li>
   </ul>
 </div>
+
 <script>
   $(document).foundation({
     equalizer : {
@@ -34,12 +26,3 @@
     }
   });
 </script>
-<script>$(document).foundation('dropdown','reflow');</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
