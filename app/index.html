@@ -28,7 +28,7 @@
     <!-- endbuild -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
   </head>
-  <body ng-app="2508wApp" ng-controller="PageViewCtrl">
+  <body ng-app="2508wApp">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -38,7 +38,7 @@
 
     <section id="main">
       <div class="container">
-        <div ng-view="true" class="{{pageClass}}" autoscroll="true"></div>
+        <div ng-view="true" autoscroll="true"></div>
       </div>
     </section>
 
@@ -72,17 +72,15 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
-    <script src="scripts/controllers/photo.js"></script>
-    <script src="scripts/controllers/detail_photo.js"></script>
-    <script src="scripts/controllers/applications.js"></script>
-    <script src="scripts/controllers/page_view.js"></script>
-    <script src="scripts/controllers/auth.js"></script>
-    <script src="scripts/directives/foundation_reflow.js"></script>
-    <script src="scripts/services/instagram_service.js"></script>
-    <script src="scripts/services/user_service.js"></script>
+    <script src="scripts/modules/common/common.js"></script>
+    <script src="scripts/modules/common/services/application_service.js"></script>
+    <script src="scripts/modules/common/services/google_service.js"></script>
+    <script src="scripts/modules/common/services/user_service.js"></script>
+    <script src="scripts/modules/application/app.js"></script>
+    <script src="scripts/modules/application/controllers/main.js"></script>
+    <script src="scripts/modules/application/controllers/about.js"></script>
+    <script src="scripts/modules/application/controllers/applications.js"></script>
+    <script src="scripts/modules/application/directives/foundation_reflow.js"></script>
     <!-- endbuild -->
     <script>
       $(document).foundation();

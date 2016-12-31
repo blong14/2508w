@@ -1,4 +1,4 @@
-<nav id="nav" class="top-bar" data-topbar ng-controller="AuthCtrl as auth">
+<nav id="nav" class="top-bar" data-topbar data-foundation-reflow="equalizer">
   <ul class="title-area">
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="javascript:;"><span>Menu</span></a></li>
@@ -8,12 +8,7 @@
     <ul class="center-buttons">
       <li><a href="blvd">Home</a></li>
       <li><a href="blvd/about">About</a></li>
-      <li ng-if="auth.isLoggedIn()"><a href="blvd/album">Photos</a></li>
       <li><a href="blvd/apps">Applications</a></li>
-      <li ng-if="false && !auth.isLoggedIn()"><a href="login" target="_self">Login</a></li>
-      <li ng-if="false && auth.isLoggedIn()"><a href="javascript:;" ng-click="auth.logOut()">Logout</a></li>
     </ul>
   </section>
 </nav>
-
-<script>$(document).foundation('topbar','reflow');</script>
