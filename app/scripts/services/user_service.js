@@ -13,7 +13,7 @@ angular.module('2508wApp')
           user.logOutUrl = e.logOutUrl;
           user.youtubeApiKey = e.youtubeApiKey;
           user.accessToken = e.accessToken;
-          user.client_id = e.clientId;
+          user.clientId = e.clientId;
         });
       };
 

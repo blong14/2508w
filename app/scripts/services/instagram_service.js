@@ -4,8 +4,8 @@ angular.module('2508wApp')
   .factory('instagramService', ['$rootScope','$http',
     function($rootScope,$http) {
 
-      var client_id = "e4727226b47b493698d89d6ad6fdc34e",
-          access_token = "605582919.1fb234f.337da01df2f84650988597633f31051e",
+      var clientId = 'e4727226b47b493698d89d6ad6fdc34e',
+          accessToken = '605582919.1fb234f.337da01df2f84650988597633f31051e',
           tags = [
             'gonghead',
             'gongtourneytime',
@@ -19,10 +19,10 @@ angular.module('2508wApp')
 
       var instagram = {};
       instagram.getImages = function(tag) {
-        var url = 'https://api.instagram.com/v1/tags/'
-                  +tag+'/media/recent?access_token='
-                  +access_token+'&client_id='
-                  +client_id+'&callback=JSON_CALLBACK';
+        var url = 'https://api.instagram.com/v1/tags/' +
+                  tag + '/media/recent?access_token=' +
+                  accessToken + '&client_id=' +
+                  clientId + '&callback=JSON_CALLBACK';
 
         $http.jsonp(url).success(
           function(response) {

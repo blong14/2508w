@@ -1,15 +1,11 @@
 'use strict';
 
 angular.module('2508wApp')
-  .controller('DetailPhotoCtrl', ['$scope','$routeParams','$location','instagramService','userService',
-    function($scope,$routeParams,$location,instagramService,userService) {
-      var self = this;
+  .controller('DetailPhotoCtrl', ['$scope','$routeParams','$location','instagramService',
+    function($scope,$routeParams,$location,instagramService) {
 
-      if(!userService.admin) {
-        //$location.path("blvd/album");
-      }
+      $scope.pageClass = 'detail-view';
 
-      $scope.pageClass = "detail-view";
       this.id = $routeParams.id;
       this.album = instagramService;
 

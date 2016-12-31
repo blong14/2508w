@@ -18,6 +18,6 @@ angular.module('2508wApp')
 
     $scope.sendPageView = function() {
       $scope.$emit('pageview',$location.url());
-    }
+    };
 
   }]);
