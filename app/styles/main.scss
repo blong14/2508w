@@ -1,7 +1,5 @@
-// bower:scss
-@import "foundation/scss/foundation.scss";
-@import "components-font-awesome/scss/font-awesome.scss";
-// endbower
+@import '~foundation-sites/scss/foundation';
+@include foundation-everything;
 
 @import 'variables';
 @import 'mixins';

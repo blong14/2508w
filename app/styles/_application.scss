@@ -1,11 +1,5 @@
 .applications {
   margin: 10px;
-  .description {
-    background: #ffffff;
-    p {
-      color: #757D75;
-    }
-  }
   .article-card {
     border: 1px solid #d7d7d7;
     background-color: #ffffff;
@@ -16,7 +10,6 @@
     }
     .card-content {
       background: #fff;
-      margin: 1.25rem;
       .post-author {
         text-align: center;
       }

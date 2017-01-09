@@ -1,0 +1,15 @@
+<div class="applications">
+  <div id="apps" class="row small-up-1 medium-up-2 large-up-3" data-equalizer>
+    <div class="columns column-block" ng-repeat="app in ctrl.apps track by $index" data-foundation-reflow="apps">
+      <div class="card article-card" data-equalizer-watch>
+        <img ng-src="{{app.image}}">
+        <div class="card-section card-content">
+          <img class="post-icon" ng-src="{{ctrl.logo}}" alt="icon">
+          <p class="post-author"><a href="{{app.url}}" target="_blank">{{app.title}}</a></p>
+          <h4>{{app.header}}</h4>
+          <p style="margin-bottom: 50px;">{{app.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

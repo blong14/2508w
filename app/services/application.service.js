@@ -2,7 +2,7 @@
 
 var apps = [
   {
-    image: 'images/BigData.png',
+    image: require('img!../images/BigData.png'),
     url: 'http://www.fastcompany.com/3057406/behind-the-brand/can-big-data-discover-the-next-pop-star',
     title: 'ReverbNation Curation',
     header: 'The Big Data Challenge',
@@ -10,7 +10,7 @@ var apps = [
     linkText: 'Go to article...'
   },
   {
-    image: 'images/fan_voting.png',
+    image: require('img!../images/fan_voting.png'),
     url: 'http://demo.soniclemur.com/',
     title: 'Fan Voting',
     header: 'Battle of the Bands',
@@ -18,7 +18,7 @@ var apps = [
     linkText: 'Check it out...'
   },
   {
-    image: 'images/opp_marketing.png',
+    image: require('img!../images/opp_marketing.png'),
     url: 'https://www.reverbnation.com/band-promotion/opportunities',
     title: 'Product Marketing',
     header: 'ReverbNation Marketing Pages',
@@ -26,7 +26,7 @@ var apps = [
     linkText: 'Check it out...'
   },
   {
-    image: 'images/reverbnation.png',
+    image: require('img!../images/reverbnation.png'),
     url: 'https://www.reverbnation.com/goodgraeff',
     title: 'Artist Profile',
     header: 'New Artist Profile',
@@ -34,7 +34,7 @@ var apps = [
     linkText: 'Try it...'
   },
   {
-    image: 'images/hbco.png',
+    image: require('img!../images/hbco.png'),
     url: 'http://www.heritagebuildingco.com/',
     title: 'HBCO',
     header: 'Heritage Building Co., LLC - Veteran Owned',
@@ -42,7 +42,7 @@ var apps = [
     linkText: 'Try it...'
   },
   {
-    image: 'images/blender.png',
+    image: require('img!../images/blender.png'),
     url: 'http://ruby-brewcalc.rhcloud.com/',
     title: 'Blender',
     header: 'Beer Blender',
@@ -50,7 +50,7 @@ var apps = [
     linkText: 'Try it...'
   },
   {
-    image: 'images/shopkeen.png',
+    image: require('img!../images/shopkeen.png'),
     url: 'http://shopkeen.herokuapp.com',
     title: 'Shopkeen',
     header: 'The ultimate Shopkin database',
@@ -58,7 +58,7 @@ var apps = [
     linkText: 'Try it...'
   },
   {
-    image: 'images/kayewalker.png',
+    image: require('img!../images/kayewalker.png'),
     url: 'http://kayeproducts.com/web-app/',
     title: 'KayeWalker',
     header: 'An easy way to find the proper walker for your needs.',
@@ -67,15 +67,14 @@ var apps = [
   }
 ];
 
-angular.module('Common')
-  .factory('ApplicationService', ['$q',
-    function($q) {
-      var api = {};
+export default class ApplicationsService {
 
-      api.loadApplications = function () {
-        return $q.when(apps);
-      };
+  /* @ngInject */
+  constructor($q) {
+    this.$q = $q;
+  }
 
-      return api;
-    }
-  ]);
+  loadApplications() {
+    return this.$q.when(apps);
+  }
+}

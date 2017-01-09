@@ -1,38 +1,51 @@
-// larger screen styles
-.top-bar {
-  background: #000000;
-  .title-area {
-    background: #000000;
-  }
+$header-bg: #000000;
+$subnav-link-padding: 0.9rem;
+$subnav-font-size: 0.75rem;
+$subnav-link-opacity: 0.25;
+$header-height: 0.5rem;
+$transition: all .35s ease-in-out;
+
+.header {
+  text-align: center;
+  background: $header-bg;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  padding-top: $header-height;
+  padding-bottom: $header-height + ($subnav-link-padding * 2 + $subnav-font-size - 0.15rem);
+}
+
+.header-subnav {
+  float: none;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
 
   li {
-    background: #000000 !important;
-  }
-
-  a {
-    background: #000000 !important;
-  }
-}
-
-@media only screen and (min-width: 40em) {
-
-  .top-bar {
-    text-align: center;
-  }
-
-  ul.center-buttons {
+    float: none;
     display: inline-block;
+
+    a {
+      padding: $subnav-link-padding 1rem;
+      font-size: $subnav-font-size;
+      color: #fff;
+      text-transform: uppercase;
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: $transition;
+      border-radius: $global-radius;
+
+      &.is-active {
+        background: rgba(250,250,250,$subnav-link-opacity);
+      }
+
+      &:hover {
+        background: rgba(250,250,250,$subnav-link-opacity);
+        transition: $transition;
+      }
+    }
   }
-}
-
-// some mobile resets
-
-.top-bar {
-  .toggle-topbar {
-    position: relative;
-  }
-}
-
-.menu-icon {
-  padding-top: 1.2rem;
 }
