@@ -2,18 +2,16 @@
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `npm run build` and `npm run build:production` for building and `npm run start` for preview.
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma.
+Running `npm run test` will run the unit tests with karma.
 
 ## Deploying
-`firebase deploy`
+`npm run build:production`
+`npm run deploy`
 
 ## TODO:
 
-1. Update angular
-2. Fix java version issue
-3. General angular cleanup
-4. Check URL rewrite filter
+1. Fix java version issue
