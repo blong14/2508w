@@ -3,7 +3,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -26,6 +25,7 @@ module.exports = {
         ]
       },
       { test: /\.html$/, loader: 'raw' },
+      { include: /\.json$/, loaders: ["json"] },
       { test: /\.jade$/, loader: 'jade-loader' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&minetype=application/font-woff' },

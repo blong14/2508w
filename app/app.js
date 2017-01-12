@@ -23,13 +23,20 @@ import './styles/main.scss';
 
 let app = angular.module('2508wApp', [ngAnimate, uiRouter, Components.name, Services.name, Directives.name])
 
-app.$inject = ['$locationProvider'];
+app.$inject = ['$locationProvider', '$urlRouterProvider', 'TracerService'];
 
-app.config(($locationProvider) => {
+app.config(($locationProvider, $urlRouterProvider) => {
     /* @ngInject */
     $locationProvider.html5Mode(true);
+
+    $urlRouterProvider.otherwise('/blvd');
   })
   .directive('app', AppComponent);
+
+app.run((TracerService) => {
+  /* @ngInject */
+  TracerService.initGlobalTracer()
+});
 
 $(document).foundation();
 
