@@ -11,7 +11,8 @@ export default class TracerService {
     if (this.hasGlobalTracer()) return;
 
     let tracer = new HawkularApm.APMTracer({
-      recorder: new HawkularApm.ConsoleRecorder(),
+      recorder: new HawkularApm.HttpRecorder('http://localhost:8080', 'adminM3201Y0', '5kC2lZYrDzsA1PYev'),
+      // recorder: new HawkularApm.ConsoleRecorder(),
       sampler: new HawkularApm.AlwaysSample(),
       deploymentMetaData: new HawkularApm.DeploymentMetaData('TracerService')
     });
@@ -25,5 +26,23 @@ export default class TracerService {
 
   hasGlobalTracer() {
     return typeof this.getGlobalTracer() === 'undefined';
+  }
+
+  createCarrier(span) {
+    let carrier = {};
+    this.getGlobalTracer().inject(
+      span.context(),
+      OpenTracing.FORMAT_TEXT_MAP,
+      carrier
+    );
+
+    return carrier;
+  }
+
+  extractSpanContext(carrier) {
+    return this.getGlobalTracer().extract(
+      OpenTracing.FORMAT_TEXT_MAP,
+      carrier
+    );
   }
 }

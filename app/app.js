@@ -35,7 +35,7 @@ app.config(($locationProvider, $urlRouterProvider) => {
 
 app.run((TracerService) => {
   /* @ngInject */
-  TracerService.initGlobalTracer()
+  TracerService.initGlobalTracer();
 });
 
 $(document).foundation();

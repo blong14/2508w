@@ -1,5 +1,7 @@
 'use strict';
 
+import TracerService from './tracer.service';
+
 var apps = [
   {
     image: require('img!../images/BigData.png'),
@@ -70,11 +72,18 @@ var apps = [
 export default class ApplicationsService {
 
   /* @ngInject */
-  constructor($q) {
+  constructor($q, TracerService) {
     this.$q = $q;
+    this.TracerService = TracerService;
+    this.tracer = TracerService.getGlobalTracer();
   }
 
-  loadApplications() {
-    return this.$q.when(apps);
+  loadApplications(ctx = {}) {
+    let spanCtx = this.TracerService.extractSpanContext(ctx);
+    let span = this.tracer.startSpan('ApplicationService.loadApplications', { childOf: spanCtx });
+    return this.$q.when(apps).then((apps) => {
+      span.finish();
+      return apps;
+    });
   }
 }
