@@ -9,7 +9,6 @@ export default class GoogleAnalyticsService {
   }
 
   recordView(url) {
-    console.log(url);
     if (this.$window.ga && this.$window.location.origin === this.domain) {
       this.$window.ga('send', 'pageview', { page: url});
     }

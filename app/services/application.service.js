@@ -4,6 +4,14 @@ import TracerService from './tracer.service';
 
 var apps = [
   {
+    image: require('img!../images/crowd_review.png'),
+    url: 'https://www.reverbnation.com/crowd_review/sample_report/standard_insight',
+    title: 'ReverbNation Crowd Review',
+    header: 'Improve Your Music With Unbiased Feedback',
+    description: 'Get your song heard by a targeted sample of real music fans and measure their thoughts and feelings in a customizable research report. Built with Rails, Highcharts, and Angular 1.x.',
+    linkText: 'See Sample Report...'
+  },
+  {
     image: require('img!../images/BigData.png'),
     url: 'http://www.fastcompany.com/3057406/behind-the-brand/can-big-data-discover-the-next-pop-star',
     title: 'ReverbNation Curation',
