@@ -1,6 +1,7 @@
 'use strict';
 
 import {default as Services} from './services';
+import OpenTracing from 'opentracing';
 
 
 describe('Tracer Service Test', () => {
@@ -19,11 +20,11 @@ describe('Tracer Service Test', () => {
   describe('the global tracer', () => {
 
     it('initially should not have a tracer', () => {
-      expect(TracerService.hasGlobalTracer()).toBe(false);
+      spyOn(OpenTracing, "initGlobalTracer");
 
       TracerService.initGlobalTracer();
 
-      expect(TracerService.hasGlobalTracer()).toBe(true);
+      expect(OpenTracing.initGlobalTracer).toHaveBeenCalled();
     });
 
     it('should return the global tracer', () => {
