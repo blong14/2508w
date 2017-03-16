@@ -2,10 +2,8 @@
 
 // vendor module imports
 import jQuery from 'jquery';
-import $ from 'jquery';
 
-window.jQuery = jQuery;
-window.$ = $;
+window.jQuery = window.$ = jQuery;
 
 import 'foundation-sites'
 import 'foundation-sites/scss/foundation.scss';

@@ -2,7 +2,7 @@
 
 import TracerService from './tracer.service';
 
-var apps = [
+const apps = [
   {
     image: require('img!../images/crowd_review.png'),
     url: 'https://www.reverbnation.com/crowd_review/sample_report/standard_insight',
