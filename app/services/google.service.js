@@ -3,13 +3,14 @@
 export default class GoogleAnalyticsService {
 
   /* @ngInject */
-  constructor($window) {
+  constructor($window, $location) {
     this.$window = $window;
-    this.domain = 'https://www.2508w.club';
+    this.$location = $location;
+    this.host = 'www.2508w.club';
   }
 
   recordView(url) {
-    if (this.$window.ga && this.$window.location.origin === this.domain) {
+    if (this.$window.ga && this.$location.host() === this.host) {
       this.$window.ga('send', 'pageview', { page: url});
     }
   }
