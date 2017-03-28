@@ -4,7 +4,7 @@ import TracerService from './tracer.service';
 
 const apps = [
   {
-    image: require('img!../images/crowd_review.png'),
+    image: require('../images/crowd_review.png'),
     url: 'https://www.reverbnation.com/crowd_review/sample_report/standard_insight',
     title: 'ReverbNation Crowd Review',
     header: 'Improve Your Music With Unbiased Feedback',
@@ -12,7 +12,7 @@ const apps = [
     linkText: 'See Sample Report...'
   },
   {
-    image: require('img!../images/BigData.png'),
+    image: require('../images/BigData.png'),
     url: 'http://www.fastcompany.com/3057406/behind-the-brand/can-big-data-discover-the-next-pop-star',
     title: 'ReverbNation Curation',
     header: 'The Big Data Challenge',
@@ -20,7 +20,7 @@ const apps = [
     linkText: 'Go to article...'
   },
   {
-    image: require('img!../images/fan_voting.png'),
+    image: require('../images/fan_voting.png'),
     url: 'http://demo.soniclemur.com/',
     title: 'Fan Voting',
     header: 'Battle of the Bands',
@@ -28,7 +28,7 @@ const apps = [
     linkText: 'Check it out...'
   },
   {
-    image: require('img!../images/opp_marketing.png'),
+    image: require('../images/opp_marketing.png'),
     url: 'https://www.reverbnation.com/band-promotion/opportunities',
     title: 'Product Marketing',
     header: 'ReverbNation Marketing Pages',
@@ -36,7 +36,7 @@ const apps = [
     linkText: 'Check it out...'
   },
   {
-    image: require('img!../images/reverbnation.png'),
+    image: require('../images/reverbnation.png'),
     url: 'https://www.reverbnation.com/goodgraeff',
     title: 'Artist Profile',
     header: 'New Artist Profile',
@@ -44,7 +44,7 @@ const apps = [
     linkText: 'Try it...'
   },
   {
-    image: require('img!../images/hbco.png'),
+    image: require('../images/hbco.png'),
     url: 'http://www.heritagebuildingco.com/',
     title: 'HBCO',
     header: 'Heritage Building Co., LLC - Veteran Owned',
@@ -52,7 +52,7 @@ const apps = [
     linkText: 'Try it...'
   },
   {
-    image: require('img!../images/blender.png'),
+    image: require('../images/blender.png'),
     url: 'http://ruby-brewcalc.rhcloud.com/',
     title: 'Blender',
     header: 'Beer Blender',
@@ -60,7 +60,7 @@ const apps = [
     linkText: 'Try it...'
   },
   {
-    image: require('img!../images/shopkeen.png'),
+    image: require('../images/shopkeen.png'),
     url: 'http://shopkeen.herokuapp.com',
     title: 'Shopkeen',
     header: 'The ultimate Shopkin database',
@@ -68,7 +68,7 @@ const apps = [
     linkText: 'Try it...'
   },
   {
-    image: require('img!../images/kayewalker.png'),
+    image: require('../images/kayewalker.png'),
     url: 'http://kayeproducts.com/web-app/',
     title: 'KayeWalker',
     header: 'An easy way to find the proper walker for your needs.',
@@ -87,8 +87,8 @@ export default class ApplicationsService {
   }
 
   loadApplications(ctx = {}) {
-    let spanCtx = this.TracerService.extractSpanContext(ctx);
-    let span = this.tracer.startSpan('ApplicationService.loadApplications', { childOf: spanCtx });
+    const spanCtx = this.TracerService.extractSpanContext(ctx),
+          span = this.tracer.startSpan('ApplicationService.loadApplications', { childOf: spanCtx });
     return this.$q.when(apps).then((apps) => {
       span.finish();
       return apps;

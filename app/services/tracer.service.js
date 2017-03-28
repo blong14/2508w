@@ -13,8 +13,8 @@ export default class TracerService {
     if (_tracer) return;
 
     _tracer = new HawkularApm.APMTracer({
-      // recorder: new HawkularApm.HttpRecorder('http://localhost:8080', 'adminM3201Y0', '5kC2lZYrDzsA1PYev'),
-      recorder: new HawkularApm.ConsoleRecorder(),
+      recorder: new HawkularApm.HttpRecorder('http://localhost:8080', 'jdoe', 'password'),
+      //recorder: new HawkularApm.ConsoleRecorder(),
       sampler: new HawkularApm.AlwaysSample(),
       deploymentMetaData: new HawkularApm.DeploymentMetaData('TracerService')
     });
@@ -43,4 +43,5 @@ export default class TracerService {
       carrier
     );
   }
+
 }

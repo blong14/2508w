@@ -20,15 +20,18 @@ export default class AppsController {
   }
 
   $onInit() {
-    let span = this.tracer.startSpan('AppsComponent', {
+    const span = this.tracer.startSpan('AppsComponent', {
       tags: {
         'controller': 'AppsController',
         'action': '$onInit'
       }
     });
-    this.TracerService.createCarrier(span);
+
+    const ctx = this.TracerService.createCarrier(span);
+
     this.google.recordView(this.$location.url());
-    this.appsService.loadApplications({HWKAPMID: span.context().getTraceId()}).then((apps) => {
+
+    this.appsService.loadApplications(ctx).then((apps) => {
       this.apps = apps;
       span.finish();
     });
