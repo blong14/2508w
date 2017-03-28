@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: npm run start
+    ports:
+    - "8888:8888"
+    volumes:
+    - ./app/:/usr/src/app/app
+    environment:
+    - NODE_ENV=dev
+  hawkular:
+    image: jboss/hawkular-apm-server
+    depends_on:
+    - web
+    ports:
+    - "8080:8080"
+    environment:
+    - HAWKULAR_APM_ADMIN_USERNAME=jdoe
+    - HAWKULAR_APM_ADMIN_PASSWORD=password
