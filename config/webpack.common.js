@@ -13,30 +13,19 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      { test: /\.js$/, loaders: ['ng-annotate', 'babel-loader'], exclude: /node_modules/ },
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass?sourceMap']},
+    rules: [
+      { test: /\.js$/, use: ['ng-annotate-loader', 'babel-loader'], exclude: /node_modules/ },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.scss$/, use: ['style-loader', 'css-loader', {loader: 'sass-loader', options: {sourceMap: true}} ]},
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&progressive=true&interlaced=false'
+        use: [
+          {loader: 'file-loader', options: {hash: 'sha512', digest: 'hex', name: '[hash].[ext]'}},
+          {loader: 'image-webpack-loader', options: {bypassOnDebug: true, optimizationLevel: 7, progressive: true, interlaced: false}}
         ]
       },
-      { test: /\.html$/, loader: 'raw' },
-      { include: /\.json$/, loaders: ["json"] },
-      { test: /\.jade$/, loader: 'jade-loader' },
-      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&minetype=application/font-woff' },
-      { test: /\.woff2$/,
-        loader: 'url?limit=10000&minetype=application/font-woff' },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&minetype=application/octet-stream' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url?limit=10000&minetype=image/svg+xml' }
+      { test: /\.html$/, use: [ {loader: 'raw-loader'}] },
+      { test: /\.jade$/, use: [{loader: 'jade-loader'}] },
     ]
   },
   devtool: 'eval-source-map',

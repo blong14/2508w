@@ -85,16 +85,6 @@ module.exports = webpackMerge(commonConfig, {
     new WebpackMd5Hash(),
 
     /**
-     * Plugin: DedupePlugin
-     * Description: Prevents the inclusion of duplicate code into your bundle
-     * and instead applies a copy of the function at runtime.
-     *
-     * See: https://webpack.github.io/docs/list-of-plugins.html#defineplugin
-     * See: https://github.com/webpack/docs/wiki/optimization#deduplication
-     */
-    new DedupePlugin(),
-
-    /**
      * Plugin: UglifyJsPlugin
      * Description: Minimize all JavaScript output of chunks.
      * Loaders are switched into minimizing mode.
