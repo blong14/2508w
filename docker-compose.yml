@@ -9,6 +9,9 @@ services:
     - ./app/:/usr/src/app/app
     environment:
     - NODE_ENV=dev
+    - HAWKULAR_APM_ADMIN_URL=http://localhost:8080
+    - HAWKULAR_APM_ADMIN_USERNAME=jdoe
+    - HAWKULAR_APM_ADMIN_PASSWORD=password
   hawkular:
     image: jboss/hawkular-apm-server
     depends_on:

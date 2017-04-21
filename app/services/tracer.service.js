@@ -4,6 +4,8 @@ import angular from 'angular';
 import OpenTracing from 'opentracing';
 import HawkularApm from 'hawkular-apm-opentracing';
 
+import AppConfig from '../app.config';
+
 let _tracer = null;
 
 
@@ -13,7 +15,11 @@ export default class TracerService {
     if (_tracer) return;
 
     _tracer = new HawkularApm.APMTracer({
-      recorder: new HawkularApm.HttpRecorder('http://localhost:8080', 'jdoe', 'password'),
+      recorder: new HawkularApm.HttpRecorder(
+        AppConfig.config().APM_URL,
+        AppConfig.config().APM_USER,
+        AppConfig.config().APM_PASSWORD
+      ),
       //recorder: new HawkularApm.ConsoleRecorder(),
       sampler: new HawkularApm.AlwaysSample(),
       deploymentMetaData: new HawkularApm.DeploymentMetaData('TracerService')
